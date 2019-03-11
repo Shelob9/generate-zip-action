@@ -1,6 +1,6 @@
 workflow "Test and Build" {
   on = "push"
-  resolves = ["zip"]
+  resolves = ["Make Git Commit"]
 }
 
 action "Install" {
@@ -24,7 +24,12 @@ action "zip" {
   args = "run zip"
 }
 
-
 action "action a" {
   uses = "./action-a/"
+}
+
+action "Make Git Commit" {
+  uses = "./.github/action-a"
+  needs = ["zip"]
+  secrets = ["GITHUB_TOKEN"]
 }
