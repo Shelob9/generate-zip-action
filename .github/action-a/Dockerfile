@@ -1,4 +1,4 @@
-FROM debian:9.5-slim
+FROM alpine/git:latest
 
 LABEL "com.github.actions.name"="Make Git Commit"
 LABEL "com.github.actions.description"="Write arguments to the standard output"
