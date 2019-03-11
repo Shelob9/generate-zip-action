@@ -23,3 +23,8 @@ action "zip" {
   needs = ["test"]
   args = "zip"
 }
+
+
+action "action a" {
+  uses = "./action-a/"
+}
