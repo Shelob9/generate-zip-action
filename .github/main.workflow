@@ -24,12 +24,11 @@ action "zip" {
   args = "run zip"
 }
 
-action "action a" {
-  uses = "./action-a/"
+action "upload zip" {
+  uses = "./upload zip/"
 }
 
-action "Make Git Commit" {
-  uses = "./.github/action-a"
+action "Upload ZIP to File.io" {
+  uses = "./.github/upload-zip"
   needs = ["zip"]
-  secrets = ["GITHUB_TOKEN"]
 }
